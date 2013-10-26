@@ -19,3 +19,5 @@ MusicSeeker
 ![image](http://i.imgur.com/yyIVx.png)
 ![image](http://i.imgur.com/0M04y.png)
 ![image](http://i.imgur.com/tcIwk.png)
+
+由于软件已无法再使用，不提供二进制文件下载。
