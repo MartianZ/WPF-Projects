@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A320E61-40EE-48F4-AFB8-E8A1ABF2B37F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <DefaultClrNameSpace>ID3Repairer</DefaultClrNameSpace>
+    <RootNamespace>MusicSorter</RootNamespace>
+    <AssemblyName>MusicSorter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>Skin\iconxp.ico</ApplicationIcon>
+    <Utf8Output>true</Utf8Output>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>F:\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.4321.la/MusicSorter/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>313CF385A37AEDF7F0CE90D23500B9BC8CE406BE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ID3Repairer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Class_SelectLyrics.cs" />
+    <Compile Include="ID3v1Helper.cs" />
+    <Compile Include="WebHelper.cs" />
+    <Compile Include="Windows_Custom_Messagebox.xaml.cs">
+      <DependentUpon>Windows_Custom_Messagebox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows_SelectLyric.xaml.cs">
+      <DependentUpon>Windows_SelectLyric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XMLHelper.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Source\ResourceDictionary_Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\ResourceDictionary_CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\ResourceDictionary_ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Source\ResourceDictionary_TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows_Custom_Messagebox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows_SelectLyric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <None Include="Application.ico">
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\AlbumBackground.png" />
+    <Resource Include="Skin\AlbumNoPicture.png" />
+    <Resource Include="Skin\checkbox_checked.png" />
+    <Resource Include="Skin\checkbox_unchecked.png" />
+    <Resource Include="Skin\close_1.png" />
+    <Resource Include="Skin\close_2.png" />
+    <Resource Include="Skin\Logo.png" />
+    <Resource Include="Skin\Main_Skin_1.png" />
+    <Resource Include="Skin\minimize_1.png" />
+    <Resource Include="Skin\minimize_2.png" />
+    <Resource Include="Skin\Text_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\Button_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\Button_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\icon_album.png" />
+    <Resource Include="Skin\icon_lyrics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\NeedToRefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ID3Class\ID3.csproj">
+      <Project>{5D66099A-A8C5-47AB-B230-C9B60DFC1B40}</Project>
+      <Name>ID3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QianQianLrc\LRC.csproj">
+      <Project>{57A31311-A8AA-44E9-8CF3-C8508FE58FC7}</Project>
+      <Name>LRC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\album_next.png" />
+    <Resource Include="Skin\album_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\Button_Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\SmallTip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Skin\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\checkbox_checked_0.png" />
+    <Resource Include="Skin\checkbox_checked_1.png" />
+    <Resource Include="Skin\checkbox_unchecked_0.png" />
+    <Resource Include="Skin\checkbox_unchecked_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\Messagebox_BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\LyricsEditor_BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\iconxp.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

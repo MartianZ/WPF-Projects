@@ -1,0 +1,24 @@
+﻿<Window x:Class="MusicSorter.Windows_SelectLyric"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="搜索更多歌词" Height="275" Width="465" Background="{DynamicResource ButtonNormalBackground}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Icon="Skin/iconxp.ico" ShowInTaskbar="False" Topmost="True">
+    <Grid>
+    	<TextBlock HorizontalAlignment="Left" Height="18" Margin="14,18,0,0" TextWrapping="NoWrap" Text="歌手：" VerticalAlignment="Top" Width="43"/>
+    	<TextBox x:Name="SelectLyrics_TextBox_Artist" HorizontalAlignment="Left" Height="23" Margin="53,15,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="138"/>
+    	<TextBlock Height="18" Margin="201,18,221,0" TextWrapping="NoWrap" Text="歌曲：" VerticalAlignment="Top"/>
+    	<TextBox x:Name="SelectLyrics_TextBox_Song" HorizontalAlignment="Right" Height="23" Margin="0,15,83,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="138"/>
+    	<Button x:Name="SelectLyrics_Button" Content="搜索" HorizontalAlignment="Right" Height="23" Margin="0,15,13,0" VerticalAlignment="Top" Width="53" FontSize="13.333" Click="SelectLyrics_Button_Click" />
+    	<ListView Margin="8,70,10,8" Name="LyricListview" MouseDoubleClick="LyricListview_MouseDoubleClick">
+    		<ListView.View>
+    			<GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding LyricID}" />
+                    <GridViewColumn Header="歌手" Width="150" DisplayMemberBinding="{Binding LyricArtist}"/>
+                    <GridViewColumn Header="歌名" Width="200" DisplayMemberBinding="{Binding LyricTitle}"/>
+
+                </GridView>
+    		</ListView.View>
+    	</ListView>
+    	<TextBlock Height="15" Margin="8,49,221,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="zh-cn" Text="双击搜索结果，软件会自动下载相应歌词："/></TextBlock>
+        
+    </Grid>
+</Window>

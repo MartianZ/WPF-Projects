@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55719A73-3059-4D68-A6C6-2606ACB23C55}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>IdSharp</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IdSharp</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <HintPath>System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <HintPath>System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v1\GenreHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v1\ID3v1Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v1\IGenreHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v1\IID3v1Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v2\ID3v2Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Tagging.ID3v2\IID3v2Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Utils\CRC32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Utils\ICRC32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Utils\IPictureUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop.Utils\PictureUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.ComInterop\IFrameList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\BasicLameTagReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\DescriptiveLameTagReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\Emphasis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\FrameData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\JointStereoExtensionMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\LamePreset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\LameTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\LameVersionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\MpegAudio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\MpegChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\MpegEncoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\MpegLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\MpegVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\OldLameHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\PresetGuesser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\PresetGuessRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\SampleRateLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\StartOfFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\UsePresetGuess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\VBRData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\VBRHeaderID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Inspection\VBRVendorID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v1\GenreHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v1\ID3v1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v1\ID3v1Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v1\ID3v1TagVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v1\IID3v1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\EqualizationItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\EventTimingItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IEqualizationItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IEventTimingItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IInvolvedPerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\ILanguageItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IMpegLookupTableItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IMusicianCreditsItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\InvolvedPerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\IPriceInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\ISynchronizedTextItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\ITempoData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\LanguageItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\MpegLookupTableItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\MusicianCreditsItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\PriceInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\SynchronizedTextItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Items\TempoData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\AttachedPictureBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\AudioEncryptionBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\AudioTextBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\CommentsBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\CommercialBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\EncryptedMetaFrameBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\EncryptionMethodBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\EqualizationItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\EqualizationListBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\EventTimingItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\GeneralEncapsulatedObjectBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\GroupIdentificationBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\InvolvedPersonBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\LanguageItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\LinkedInformationBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\MpegLookupTableItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\MusicianCreditsItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\PopularimeterBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\PriceInformationBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\PrivateFrameBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\RelativeVolumeAdjustmentBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\SignatureBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\SynchronizedTextBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\SynchronizedTextItemBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\TempoDataBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\TermsOfUseBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\UniqueFileIdentifierBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\UnsynchronizedLyricsBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\UrlBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\UserDefinedTextBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames.Lists\UserDefinedUrlBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\AttachedPicture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\AudioEncryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\AudioSeekPointIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\AudioText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Comments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Commercial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\EncryptedMetaFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\EncryptionMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\EqualizationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\EventTiming.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\GeneralEncapsulatedObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\GroupIdentification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IAttachedPicture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IAudioEncryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IAudioSeekPointIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IAudioText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IComments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ICommercial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IEncryptedMetaFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IEncryptionMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IEqualizationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IEventTiming.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IGeneralEncapsulatedObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IGroupIdentification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IInvolvedPersonList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ILanguageFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ILinkedInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IMpegLookupTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IMusicCDIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IMusicianCreditsList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\InvolvedPersonList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IOwnership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IPlayCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IPopularimeter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IPositionSynchronization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IPrivateFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IRecommendedBufferSize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IRelativeVolumeAdjustment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IReverb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ISeekNextTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ISignature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ISynchronizedTempoCodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ISynchronizedText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ITermsOfUse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ITextEncoding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ITextFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\ITXXXFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IUniqueFileIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IUnsynchronizedText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IUrlFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\IWXXXFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\LanguageFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\LinkedInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\MpegLookupTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\MusicCDIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\MusicianCreditsList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Ownership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\PlayCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Popularimeter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\PositionSynchronization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\PrivateFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\RecommendedBufferSize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\RelativeVolumeAdjustment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Reverb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\SeekNextTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\Signature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\SynchronizedTempoCodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\SynchronizedText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\TermsOfUse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\TextFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\TXXXFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\UniqueFileIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\UnknownFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\UnsynchronizedText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\UrlFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2.Frames\WXXXFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\AudioScramblingMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ChannelType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\EncodingType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\FrameBinder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\FrameContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\FrameHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ID3v2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ID3v2ExtendedHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ID3v2Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ID3v2Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ID3v2TagVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\IFrameContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\IFrameHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\IID3v2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\IID3v2ExtendedHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\IID3v2Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ImageEncodingRestriction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ImageSizeRestriction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\InterpolationMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ITagRestrictions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\LanguageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\MusicEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\PictureType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\PictureTypeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\ReceivedAs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TagReadingInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TagSizeRestriction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TagVersionOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TextContentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TextEncodingRestriction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TextFieldsSizeRestriction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\TimestampFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Tagging.ID3v2\VolumeAdjustmentDirection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\CancelDataEventArgs!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\CRC32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\DataEventArgs!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\ErrorType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\GenericBinder!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\Guard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\IBindableControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\IErrorProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\INotifyInvalidData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\InvalidDataEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdSharp.Utils\InvalidDataEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\Adler32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\Deflate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\InfBlocks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\InfCodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\Inflate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\InfTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\StaticTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\SupportClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\Tree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\zlibConst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\ZOutputStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\ZStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zlib\ZStreamException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

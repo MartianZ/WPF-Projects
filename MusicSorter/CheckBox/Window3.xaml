@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfApplication1.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="264" Width="550" Background="Black">    
+    <StackPanel Margin="20">
+        <CheckBox Content="Checked = Flse"></CheckBox>
+        <CheckBox Content="Checked = True"></CheckBox>
+        <CheckBox Content="MouseOver"></CheckBox>
+        <CheckBox Content="Pressed"></CheckBox>
+    </StackPanel>
+</Window>
