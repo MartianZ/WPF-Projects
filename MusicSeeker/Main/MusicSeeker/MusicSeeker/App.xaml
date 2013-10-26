@@ -1,0 +1,369 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    xmlns:c="clr-namespace:MusicSeeker"
+    x:Class="MusicDownloader.App"
+    StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<!--TextBox样式开始-->
+		<LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" StartPoint="0,0" MappingMode="Absolute">
+    		<GradientStop Color="#ABADB3" Offset="0.05"/>
+    		<GradientStop Color="#E2E3EA" Offset="0.07"/>
+    		<GradientStop Color="#E3E9EF" Offset="1"/>
+    	</LinearGradientBrush>
+    	<Style x:Key="TextBoxStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+    		<Style.Resources>
+    			<Storyboard x:Key="TextFocus">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="5" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+
+                <Storyboard x:Key="TextWithoutFocus">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+    		</Style.Resources>
+    		<Style.Triggers>
+    			<Trigger Property="IsFocused" Value="True">
+    				<Trigger.ExitActions>
+    					<BeginStoryboard x:Name="TextWithoutFocus_BeginStoryboard" Storyboard="{StaticResource TextWithoutFocus}"/>
+    				</Trigger.ExitActions>
+    				<Trigger.EnterActions>
+    					<BeginStoryboard Storyboard="{StaticResource TextFocus}"/>
+    				</Trigger.EnterActions>
+    			</Trigger>
+    		</Style.Triggers>
+    		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+    		<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+    		<Setter Property="BorderThickness" Value="1"/>
+    		<Setter Property="Padding" Value="1"/>
+    		<Setter Property="AllowDrop" Value="true"/>
+    		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="BitmapEffect">
+                <Setter.Value>
+                    <OuterGlowBitmapEffect GlowColor="#FFE8F75E" GlowSize="0" />
+                </Setter.Value>
+            </Setter>
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="{x:Type TextBox}">
+    					<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" RenderMouseOver="{TemplateBinding IsMouseOver}">
+    						<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+    					</Microsoft_Windows_Themes:ListBoxChrome>
+    					<ControlTemplate.Triggers>
+    						<Trigger Property="IsEnabled" Value="false">
+    							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+    							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+    						</Trigger>
+    					</ControlTemplate.Triggers>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+        <!--TextBox样式结束-->
+		
+		<!--Button样式开始-->
+		<Style x:Key="ButtonFocusVisual">
+    		<Setter Property="Control.Template">
+    			<Setter.Value>
+    				<ControlTemplate>
+    					<Rectangle Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2" SnapsToDevicePixels="true"/>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+    	<LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#fefefe" Offset="0"/> <!--非鼠标Hover的背景颜色-->
+            <GradientStop Color="#fefefe" Offset="0.5"/>
+            <GradientStop Color="#efefef" Offset="0.5"/>
+            <GradientStop Color="#efefef" Offset="1"/>
+    	</LinearGradientBrush>
+    	<SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    	<Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Storyboard x:Key="ButtonHover">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="5" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+
+                <Storyboard x:Key="ButtonWithoutHover">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </Style.Resources>
+            <Style.Triggers>
+    			<Trigger Property="IsMouseOver" Value="True">
+    				<Trigger.ExitActions>
+    					<BeginStoryboard x:Name="ButtonWithoutHover_BeginStoryboard" Storyboard="{StaticResource ButtonWithoutHover}"/>
+    				</Trigger.ExitActions>
+    				<Trigger.EnterActions>
+    					<BeginStoryboard Storyboard="{StaticResource ButtonHover}"/>
+    				</Trigger.EnterActions>
+    				<Setter Property="Background">
+    					<Setter.Value>
+    						<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="White" Offset="0"/> <!--鼠标Hover的背景颜色-->
+                                <GradientStop Color="#fbfcfe" Offset="0.5"/>
+                                <GradientStop Color="#d4e8fe" Offset="0.5"/>
+                                <GradientStop Color="#fbfcfe" Offset="1"/>
+                            </LinearGradientBrush>
+    					</Setter.Value>
+    				</Setter>
+    				<Setter Property="Foreground" Value="#FF34AFF6"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                	<Trigger.ExitActions>
+                		<StopStoryboard BeginStoryboardName="ButtonWithoutHover_BeginStoryboard"/>
+                	</Trigger.ExitActions>
+                	<Trigger.EnterActions>
+                		<BeginStoryboard x:Name="ButtonWithoutHover_BeginStoryboard1" Storyboard="{StaticResource ButtonWithoutHover}"/>
+                	</Trigger.EnterActions>
+                    <Setter Property="Background" Value="#eaeaea" />
+                    <Setter Property="Foreground" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="BitmapEffect">
+                <Setter.Value>
+                    <OuterGlowBitmapEffect GlowColor="#9ecaf4" GlowSize="0" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    		<Setter Property="BorderThickness" Value="1"/>
+    		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="FontFamily" Value="微软雅黑" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    		<Setter Property="VerticalContentAlignment" Value="Center"/>
+    		<Setter Property="Padding" Value="1"/>
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="{x:Type Button}">
+    					<Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" >
+    						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+    					</Microsoft_Windows_Themes:ButtonChrome>
+                    </ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+		<!--Button样式结束-->
+
+        <!--ListBox样式-->
+        <Style TargetType="ListBox">
+            <Setter Property="BorderBrush" Value="#BDD4F1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <!--ListBoxItem样式-->
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Foreground" Value="#B5BABF"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="back" BorderBrush="AliceBlue" BorderThickness="0,1,0,1">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="AliceBlue" Offset="0.0"/>
+                                            <GradientStop Color="AliceBlue" Offset="0.5"/>
+                                            <GradientStop Color="AliceBlue" Offset="0.51"/>
+                                            <GradientStop Color="AliceBlue" Offset="1"/>
+                                        </GradientStopCollection>
+                                    </GradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter x:Name="content" Height="28" Margin="2" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="68" Duration="0:0:0.3" Storyboard.TargetName="content" Storyboard.TargetProperty="Height"/>
+                                            <DoubleAnimation To="68" Duration="0:0:0.3" Storyboard.TargetProperty="Height"/>
+                                            <ColorAnimation To="#F3C37C" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" />
+                                            <ColorAnimation To="#952B00" Duration="0:0:0.2" Storyboard.TargetProperty="(ListBoxItem.Foreground).(SolidColorBrush.Color)" />
+                                            <ColorAnimation To="#FFF" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation To="#FFEF99" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            <ColorAnimation To="#FFE13F" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[2].(GradientStop.Color)" />
+                                            <ColorAnimation To="#FFF3B0" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[3].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation BeginTime="0:0:0.4"  Duration="0:0:0.2" Storyboard.TargetName="content" Storyboard.TargetProperty="Height"/>
+                                            <DoubleAnimation BeginTime="0:0:0.4" Duration="0:0:0.2" Storyboard.TargetProperty="Height"/>
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetProperty="(ListBoxItem.Foreground).(SolidColorBrush.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[2].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[3].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#D8E6F5" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" />
+                                            <ColorAnimation To="#617A98" Duration="0:0:0.2" Storyboard.TargetProperty="(ListBoxItem.Foreground).(SolidColorBrush.Color)" />
+                                            <ColorAnimation To="#F6F9FD" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation To="#E0EBF7" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            <ColorAnimation To="#D7E5F6" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[2].(GradientStop.Color)" />
+                                            <ColorAnimation To="#F6F9FD" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[3].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetProperty="(ListBoxItem.Foreground).(SolidColorBrush.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[2].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[3].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--FileInfo数据模板-->
+        <DataTemplate DataType="{x:Type c:Song}">
+            <WrapPanel VerticalAlignment="Center">
+                <WrapPanel.ToolTip>
+                    <WrapPanel Width="164">
+                        <Image Margin="2,4" MaxHeight="160" MaxWidth="160" Source="{Binding AlbumURL2}"/>
+                        <TextBlock Margin="2" Text="{Binding SongTitle}" Width="160"/>
+                        <TextBlock Margin="2">歌手：</TextBlock><TextBlock Text="{Binding Artist}" Margin="2" Width="120"/>
+                        <TextBlock Margin="2">专辑：</TextBlock><TextBlock Text="{Binding Album}" Margin="2"  Width="120"/>
+                    </WrapPanel>
+                </WrapPanel.ToolTip>
+                <Image x:Name="pic" Margin="2" Opacity="0" MaxHeight="0" MaxWidth="0" Source="{Binding AlbumURL}" />
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="title" Height="24" Margin="2,2" Text="{Binding TitleAndArtist}"/>
+                    <TextBlock x:Name="path" Opacity="0" Height="0" Margin="2,0" Text="{Binding ArtistAndAlbum}"/>
+                </StackPanel>
+            </WrapPanel>
+            <DataTemplate.Triggers>
+                <Trigger Property="Height" Value="68">
+                    <Setter TargetName="path" Property="Height" Value="24"/>
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation To="1" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="Opacity" />
+                                <DoubleAnimation To="64" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxHeight" />
+                                <DoubleAnimation To="64" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxWidth" />
+                                <DoubleAnimation To="0.4" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation BeginTime="0:0:0.4" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="Opacity" />
+                                <DoubleAnimation BeginTime="0:0:0.3" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxHeight" />
+                                <DoubleAnimation BeginTime="0:0:0.3" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxWidth" />
+                                <DoubleAnimation BeginTime="0:0:0.4" Duration="0:0:0.1" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type c:DownLoad}">
+            <WrapPanel VerticalAlignment="Center">
+                <WrapPanel.ToolTip>
+                    <WrapPanel Width="164">
+                        <Image Margin="2,4" MaxHeight="160" MaxWidth="160" Source="{Binding AlbumURL2}"/>
+                        <TextBlock Margin="2" Text="{Binding SongTitle}" Width="160"/>
+                        <TextBlock Margin="2">歌手：</TextBlock>
+                        <TextBlock Text="{Binding Artist}" Margin="2" Width="120"/>
+                        <TextBlock Margin="2">专辑：</TextBlock>
+                        <TextBlock Text="{Binding Album}" Margin="2"  Width="120"/>
+                    </WrapPanel>
+                </WrapPanel.ToolTip>
+                <Image x:Name="pic" Margin="2" Opacity="0" MaxHeight="0" MaxWidth="0" Source="{Binding AlbumURL}" />
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="title" Height="24" Margin="2,2" Text="{Binding TitleAndArtist}"/>
+                    <TextBlock x:Name="path" Opacity="0" Height="0" Margin="2,0" Text="{Binding ArtistAndAlbum}"/>
+                </StackPanel>
+            </WrapPanel>
+            <DataTemplate.Triggers>
+                <Trigger Property="Height" Value="68">
+                    <Setter TargetName="path" Property="Height" Value="24"/>
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation To="1" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="Opacity" />
+                                <DoubleAnimation To="64" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxHeight" />
+                                <DoubleAnimation To="64" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxWidth" />
+                                <DoubleAnimation To="0.4" BeginTime="0:0:0.1" Duration="0:0:0.1" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation BeginTime="0:0:0.4" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="Opacity" />
+                                <DoubleAnimation BeginTime="0:0:0.3" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxHeight" />
+                                <DoubleAnimation BeginTime="0:0:0.3" Duration="0:0:0.1" Storyboard.TargetName="pic" Storyboard.TargetProperty="MaxWidth" />
+                                <DoubleAnimation BeginTime="0:0:0.4" Duration="0:0:0.1" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!--TextBox边框样式-->
+        <SolidColorBrush x:Key="ListBorder" Color="#FF7F9DB9"/>
+        <Style x:Key="TextBoxStyleLite" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

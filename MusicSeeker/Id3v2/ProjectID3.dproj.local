@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/02/25 22:58:42.004.dproj,C:\Users\Zhu\Documents\RAD Studio\Projects\Project1.dproj=E:\MusicSeeker\Id3v2\ProjectID3.dproj</Transaction>
+    <Transaction>2011/02/25 22:59:26.193.pas,E:\MusicSeeker\Id3v2\Unit1.pas=E:\MusicSeeker\Id3v2\ID3v2_Lib.pas</Transaction>
+    <Transaction>2011/02/26 14:43:54.444.pas,E:\MusicSeeker\Id3v2\Unit1.pas=E:\MusicSeeker\Id3v2\QianQianLRCU.pas</Transaction>
+    <Transaction>2011/03/01 22:33:16.914.pas,E:\MusicSeeker\Id3v2\Unit1.pas=E:\MusicSeeker\Id3v2\ID3v1Library.pas</Transaction>
+  </Transactions>
+</BorlandProject>
